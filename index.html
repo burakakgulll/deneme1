@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./Hesaplar_files/hesap.css" charset="UTF-8">
+</head><body>
+
+<title>Aşık Hesabı</title>
+
+
+
+<style type="text/css">
+body {
+background-color:#EEE;
+width:device-width;
+padding:5%;
+vertical-align:middle;
+margin:auto;
+font-family:"Arial Narrow";
+font-size:4vw;
+}
+
+
+#buton {
+float-center:center;
+padding:1.5vw;
+width:70%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+#butontaban {
+float-center:center;
+padding:1.5vw;
+width:70%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+
+nav {
+float:left;
+width:50%;
+}
+
+
+table,th,td {
+border: 0.1vw solid black;
+border-collapse: collapse;
+text-align:center;
+}
+
+
+
+
+td {
+text-align:left;
+}
+
+
+#on {
+background-color:gray;
+color:white;
+width:50%;
+text-align:center;
+border:0.1vw solid black;
+}
+
+output {
+width:50%;
+}
+
+
+
+
+select {
+border-radius:5px;
+border:1px black solid;
+background-color:gray;
+color:white;
+}
+
+#tablobas {
+background-color:gray;
+color:white;
+text-align:center;
+border:0.1vw solid black;
+
+}
+
+.sidenav{
+height:100%;
+width:0;
+position:fixed;
+z-index:1;
+top:0;
+left:0;
+background-color:black;
+overflow-x:hideen;
+padding-top:60px;
+transition:0.5s;
+display:none;
+}
+
+
+.sidenav a {
+padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:18px;
+color:white;
+display:block;
+transition:0.3s;
+}
+
+.sidenav b {
+padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:22px;
+color:white;
+display:block;
+transition:0.3s;
+}
+
+
+.sidenav a:hover {
+color:#f1f1f1;
+}
+
+.sidenav .closebtn {
+position:absolute;
+top:0;
+right:10px;
+top:5px;
+font-size:30px;
+margin-left:50px;
+padding:5px;
+}
+
+#cekmeceac {
+padding-top:5px;
+padding-left:2%;
+padding-right:5%;
+padding-bottom:5%;
+font-size:1.5vw;
+color:white;
+position:fixed;
+}
+
+#cc {
+top:0;
+left:0;
+right:0;
+height:5%;
+background-color:black;
+display:inline;
+position:fixed;
+z-index:0;
+}
+
+#ccc {
+diplay:block;
+top:11px;
+left:5%;
+color:white;
+position:fixed;
+font-size:20px;
+}
+
+
+#main {
+
+font-size:1.5vw;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+</style>
+
+
+
+<script language="JavaScript">
+function openNav() {
+document.getElementById("cekmece").style.width="250px";
+document.getElementById("cekmece").style.display="block";
+document.getElementById("cekmece").style.transition="0.5s";
+}
+
+function closeNav() {
+    document.getElementById("cekmece").style.width = "0";
+    document.getElementById("cekmece").style.display="none";
+    document.getElementById("cekmece").style.transition="0.5s";
+}
+</script>
+
+
+
+
+
+<div id="cc" class="cc"><ccc id="ccc">Aşık Hesabı</ccc>
+
+<div id="cekmece" class="sidenav" style="width: 0px; display: none; transition: 0.5s;">
+  <b>Menüler</b><a id="a" href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <br>
+  <a id="a" href="index.html">Aşık Hesabı</a>
+  <a id="a" href="tabanhesabi.html">Kolon Tabanı Hesabı</a>
+  <a id="a" href="bulonkesme.html">Bulon Hesabı</a>
+</div>
+
+<span onclick="openNav()" id="cekmeceac">☰</span>
+
+</div>
+
+
+
+
+
+<div id="main">
+<br>
+<!--Girilen degerler-->
+
+<t1><nav>L (m)</nav></t1>
+<asd><input type="number" value="" id="lkar" min="0"></asd>
+<br><br>
+
+
+<t1><nav>h (m)</nav></t1>
+<asd><input type="number" value="" id="hkar" min="0"></asd>
+<br><br>
+
+
+<t1><nav>Aşık Aralığı (m)</nav></t1>
+<asd><input type="number" value="" id="noktaasikara" min="0"></asd>
+<br><br>
+
+
+<t1><nav>Sol Açıklık (m)</nav></t1>
+<asd><input type="number" value="" id="acikliksol" min="0"></asd>
+<br><br>
+
+
+<t1> <nav>Sağ Açıklık (m)</nav></t1>
+<asd><input type="number" value="" id="acikliksag" min="0"></asd>
+<br><br>
+
+
+
+
+
+<!-- Listboxlar -->
+
+<t1><nav>Kar Bölgesi</nav></t1>
+<select id="bolge">
+
+<option value="0">1</option>
+<option value="1">2</option>
+<option value="2">3</option>
+<option value="3">4</option>
+</select>
+<br><br>
+
+<t1><nav>Rakım (m)</nav></t1>
+<select name="Rakım (m)" id="rakim">
+<option value="0">0-200</option>
+<option value="1">300</option>
+<option value="2">400</option>
+<option value="3">500</option>
+<option value="4">600</option>
+<option value="5">700</option>
+<option value="6">800</option>
+<option value="7">900</option>
+<option value="8">1000</option>
+<option value="9">1001-1500</option>
+<option value="10">1500</option>
+</select>
+<br><br>
+
+
+
+<t1><nav>Buz Yükü</nav></t1>
+<select id="buzz">
+<option value="21">Var</option>
+<option value="0">Yok</option>
+</select>
+<br><br>
+
+
+<t1><nav>Yapı Yüksekliği (m)</nav></t1>
+<select id="noktayukseklik">
+<option value="50">0-8 metre</option>
+<option value="80">9-20 metre</option>
+<option value="110">21-100 metre</option>
+<option value="130">&gt;100 metre</option>
+</select>
+<br><br>
+
+
+<nokta><nav>Aşık</nav></nokta>
+<select id="asikk">
+<option value="0">UNP100</option>
+<option value="1">UNP120</option>
+<option value="2">UNP140</option>
+</select>
+<br><br>
+
+
+<nokta><nav>Kaplama Seçiniz</nav></nokta>
+<select id="kaplama">
+<option value="10">10 kg/m2</option>
+<option value="15">15 kg/m2</option>
+<option value="20">20 kg/m2</option>
+<option value="25">25 kg/m2</option>
+</select>
+<br><br>
+
+
+
+
+
+
+
+<script language="javascript">
+function hesaplar(){
+
+
+// matrisler
+
+var bolge11=[75,75,75,75,75,75,80,80,80,90,95];
+var	bolge22=[75,75,75,75,75,75,85,95,105,115,120];
+var	bolge33=[75,75,75,75,80,85,125,130,135,150,155];
+var	bolge44=[75,80,80,85,90,95,140,150,160,180,185];
+var kartablo =[bolge11,bolge22,bolge33,bolge44];
+
+var unp100=[50.4,18,211.81,33.33,10.82];
+var unp120=[74.8,23.7,375.75,49.4,13.65];
+var unp140=[105.64,315,622.93,715,16.35];
+var profil=[unp100,unp120,unp140];
+	
+	
+//Deger atamalari	
+	
+var b=parseFloat(document.getElementById("bolge").value);
+var r=parseFloat(document.getElementById("rakim").value);
+var hkarr=parseFloat(document.getElementById("hkar").value);
+var lkarr=parseFloat(document.getElementById("lkar").value);
+var ruz=parseFloat(document.getElementById("noktayukseklik").value);
+var asik=parseFloat(document.getElementById("asikk").value);
+var kaplama=parseFloat(document.getElementById("kaplama").value);
+var ara=parseFloat(document.getElementById("noktaasikara").value);
+var soll=parseFloat(document.getElementById("acikliksol").value);
+var sagl=parseFloat(document.getElementById("acikliksag").value);
+var buz=parseFloat(document.getElementById("buzz").value);
+
+//matris cekimleri
+
+var pk=parseFloat(kartablo[b][r]);
+var oz=parseFloat(profil[asik][4]);
+
+
+
+
+
+//HESAPLAR
+//Kar hesaplari
+
+var alfa=Math.atan(hkarr/lkarr);
+var alfad=alfa*(180/Math.PI);
+var m=1-((alfad-30)/40);
+var karsonuc=m*pk;
+var lhesap=(soll+sagl)/2;
+var yatayara=Math.cos(alfa)*ara;
+
+
+//Ruzgar hesaplari
+
+var kolonpozitif=0.8*lhesap*ruz;
+var kolonnegatif=0.4*ruz*lhesap;
+var catipozitif=(1.2*Math.sin(alfa)-0.4)*ruz*lhesap;
+var catinegatif=0.4*ruz*lhesap;
+
+var catipozx=Math.sin(alfa)*catipozitif;
+var catipozz=(-1)*Math.cos(alfa)*catipozitif;
+var catinegx=Math.sin(alfa)*catinegatif;
+var catinegz=Math.cos(alfa)*catinegatif;
+
+
+
+//Yuk hesaplari
+
+var catig=((oz*lhesap)/yatayara+kaplama*lhesap);
+var catiq=(karsonuc+buz)*lhesap;
+
+var catignok=yatayara*catig;
+var catiqnok=yatayara*catiq;
+
+
+
+//Cikti ve Sartlar
+
+
+
+if (lkarr <=0) {document.getElementById("kirisolu").value="L değerini kontrol ediniz!";}
+else if (hkarr <=0) {document.getElementById("kirisolu").value="h yüksekliğini kontrol ediniz!";}
+else if (ara <=0) {document.getElementById("kirisolu").value="Aşık aralığını kontrol ediniz!";}
+else if (soll <0) {document.getElementById("kirisolu").value="Sol açıklığı kontrol ediniz!";}
+else if (sagl <0) {document.getElementById("kirisolu").value="Sağ açıklığı kontrol ediniz!";}
+
+else 
+{document.getElementById("kirisolu").value=catig.toFixed(2);}
+{document.getElementById("kirishar").value=catiq.toFixed(2);}
+{document.getElementById("kirispoz").value=catipozitif.toFixed(2);}
+{document.getElementById("kirisneg").value=catinegatif.toFixed(2);}
+{document.getElementById("kolpoz").value=kolonpozitif.toFixed(2);}
+{document.getElementById("kolneg").value=kolonnegatif.toFixed(2);}
+{document.getElementById("kirisolunok").value=catignok.toFixed(2);}
+{document.getElementById("kirisharnok").value=catiqnok.toFixed(2);}
+{document.getElementById("kirispoznokx").value=catipozx.toFixed(2);}
+{document.getElementById("kirispoznokz").value=catipozz.toFixed(2);}
+{document.getElementById("kirisnegnokx").value=catinegx.toFixed(2);}
+{document.getElementById("kirisnegnokz").value=catinegz.toFixed(2);}
+
+}
+
+
+
+</script>
+
+
+
+<!-- Buton ve cikti alani-->
+
+<div style="text-align:center;"><button onclick="hesaplar()" id="buton"><b>Hesapla</b></button></div>
+<br><br>
+
+
+
+<table id="tablo">
+
+<tbody><tr id="tablobas">
+<td></td>
+<td>Yayılı (kg/m)</td>
+<td>Noktasal (+x) (kg)</td>
+<td>Noktasal (+z) (kg)</td>
+</tr>
+
+<tr>
+<td id="on">Kirişe Aktarılan Ölü Yük</td>
+<td><output id="kirisolu" readonly=""></output></td>
+<td></td>
+<td><output id="kirisolunok" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Kirişe Aktarılan Hareketli Yük</td>
+<td><output id="kirishar" readonly=""></output></td>
+<td></td>
+<td><output id="kirisharnok" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Pozitif Yönde Kirişe Aktarilan Rüzgar Yükü</td>
+<td><output id="kirispoz" readonly=""></output></td>
+<td><output id="kirispoznokx" readonly=""></output></td>
+<td><output id="kirispoznokz" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Negatif Yönde Kirişe Aktarilan Rüzgar Yükü</td>
+<td><output id="kirisneg" readonly=""></output></td>
+<td><output id="kirisnegnokx" readonly=""></output></td>
+<td><output id="kirisnegnokz" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Pozitif Yönde Kolona Aktarilan Rüzgar Yükü</td>
+<td id="koll" colspan="3"><output id="kolpoz" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Negatif Yönde Kolona Aktarilan Rüzgar Yükü</td>
+<td id="koll" colspan="3"><output id="kolneg" readonly=""></output></td>
+</tr>
+
+
+</tbody></table>
+<br><br><br>
+
+
+</div>
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+
+</body></html>
