@@ -1,0 +1,219 @@
+
+
+
+
+body {
+background-color:#EEE;
+width:device-width;
+padding-top:5%;
+padding-bottom:20%;
+padding-right:20%;
+padding-left:20%;
+vertical-align:middle;
+margin:auto;
+font-family:Arial;
+
+}
+
+
+#buton {
+float:center;
+padding:0.5vw;
+width:20%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+#butontaban {
+float:center;
+padding:0.5vw;
+width:20%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+
+nav {
+float:left;
+width:50%;
+font-size:70%;
+}
+
+
+
+#tablo1 {
+	border:0.1vw solid black;
+border-collapse: collapse;
+text-align:center;
+vertical-align:middle;
+margin-left:auto;
+margin-right:auto;
+font-size:70%;
+padding:5%;
+	
+	
+}
+
+.on {
+background-color:#EEE;
+color:black;
+width:50%;
+text-align:center;
+border:0;
+padding-top:3%;
+padding-bottom:3%;
+padding-left:3%;
+padding-right:3%;	
+}
+
+.hclass {
+	background-color:#EEE;
+	text-align:center;
+	font-size:70%;
+	border:0.1vw solid black;
+}
+
+
+
+#tablo, #off1, #off2, #off3, #off4 {
+border: 0.1vw solid black;
+border-collapse: collapse;
+text-align:center;
+vertical-align:middle;
+margin-left:auto;
+margin-right:auto;
+font-size:70%;
+padding:5%;
+}
+
+
+
+
+
+#on, #tablobas {
+background-color:gray;
+color:white;
+width:50%;
+text-align:center;
+border:0.1vw solid black;
+}
+
+output {
+width:50%;
+}
+
+
+
+
+select {
+border-radius:5px;
+border:1px black solid;
+background-color:gray;
+color:white;
+}
+
+#tablobas {
+background-color:gray;
+color:white;
+text-align:center;
+border:0.1vw solid black;
+
+}
+
+#close {
+display:none;	
+	
+}
+
+
+
+
+
+
+.sidenav {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 10px 8px 10px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+.closebtn {
+
+display:none;
+}
+
+#cekmeceac{
+display:none;
+}
+
+#cc {
+top:0;
+left:250px;
+right:0;
+height:5%;
+background-color:black;
+display:inline;
+position:fixed;
+z-index:0;
+}
+
+#ccc {
+diplay:block;
+top:11px;
+left:300px;
+color:white;
+position:fixed;
+font-size:20px;
+}
+
+
+#main {
+
+font-size:1.5vw;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+#res {
+border: 0.2vw solid black;
+border-radius:1vw;
+max-width:80%;
+height:auto;
+display:block;
+margin-left:auto;
+margin-right:auto;
+
+
+}
+

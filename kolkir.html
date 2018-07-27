@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<title>Kolon-Kiriş Birleşim Hesabı</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+<link rel="stylesheet" media="screen and (min-width: 900px)" href="desktop.css" charset="UTF-8">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="mobile.css" charset="UTF-8">		
+		
+		<script type="text/javascript" src="./jquery-1.7.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){		
+				
+				$('.del').live('click',function(){
+					$(this).parent().parent().remove();
+				});
+				
+				$('.add').live('click',function(){
+					$(this).val('Sil');
+					$(this).attr('class','del');
+					var appendTxt = "<tr><td class='on'><input type='number' class='hclass' name='input_box_one[]' id='h'/></td><td  class='on'><input class='add' type='button' value='Ekle' /></td></tr>";
+					$('#tablo1 > tbody:last-child').append(appendTxt);	
+					
+				});        
+			});
+		</script>
+		
+		
+		<script>
+		dtop=function(arr){
+  return arr.reduce(function(a,b){
+    return a + b
+  }, 0);
+}
+		</script>
+		
+		
+		
+		<script>
+		function cuberoot(x) {
+    var y = Math.pow(Math.abs(x), 1/3);
+    return x < 0 ? -y : y;
+}
+
+function solveCubic(a, b, c, d) {
+    if (Math.abs(a) < 1e-8) { // Quadratic case, ax^2+bx+c=0
+        a = b; b = c; c = d;
+        if (Math.abs(a) < 1e-8) { // Linear case, ax+b=0
+            a = b; b = c;
+            if (Math.abs(a) < 1e-8) // Degenerate case
+                return [];
+            return [-b/a];
+        }
+
+        var D = b*b - 4*a*c;
+        if (Math.abs(D) < 1e-8)
+            return [-b/(2*a)];
+        else if (D > 0)
+            return [(-b+Math.sqrt(D))/(2*a), (-b-Math.sqrt(D))/(2*a)];
+        return [];
+    }
+
+    // Convert to depressed cubic t^3+pt+q = 0 (subst x = t - b/3a)
+    var p = (3*a*c - b*b)/(3*a*a);
+    var q = (2*b*b*b - 9*a*b*c + 27*a*a*d)/(27*a*a*a);
+    var roots;
+
+    if (Math.abs(p) < 1e-8) { // p = 0 -> t^3 = -q -> t = -q^1/3
+        roots = [cuberoot(-q)];
+    } else if (Math.abs(q) < 1e-8) { // q = 0 -> t^3 + pt = 0 -> t(t^2+p)=0
+        roots = [0].concat(p < 0 ? [Math.sqrt(-p), -Math.sqrt(-p)] : []);
+    } else {
+        var D = q*q/4 + p*p*p/27;
+        if (Math.abs(D) < 1e-8) {       // D = 0 -> two roots
+            roots = [-1.5*q/p, 3*q/p];
+        } else if (D > 0) {             // Only one real root
+            var u = cuberoot(-q/2 - Math.sqrt(D));
+            roots = [u - p/(3*u)];
+        } else {                        // D < 0, three roots, but needs to use complex numbers/trigonometric solution
+            var u = 2*Math.sqrt(-p/3);
+            var t = Math.acos(3*q/p/u)/3;  // D < 0 implies p < 0 and acos argument in [-1..1]
+            var k = 2*Math.PI/3;
+            roots = [u*Math.cos(t), u*Math.cos(t-k), u*Math.cos(t-2*k)];
+        }
+    }
+
+    // Convert back from depressed cubic
+    for (var i = 0; i < roots.length; i++)
+        roots[i] -= b/(3*a);
+
+    return roots;
+}
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<script>
+		
+		function hesap(){
+	
+		var nn=document.getElementById("tablo1").getElementsByTagName("tr").lenght;
+		var n=parseFloat(nn);
+		var y=[];
+		var ty=[];
+		var fh=[];
+		var fhk=[];
+		var hk=[];
+		var th=[];
+		var thk=[];
+		var h=[];
+		var xxx=[];
+		var toplamh=[];
+		var toplamhk=[];
+		
+		
+		
+		var list = document.getElementsByClassName("hclass");
+		for (var i = 0; i < list.length; i++) {
+		list[i].setAttribute("id", "h" + i);
+		y[i]=parseFloat(document.getElementById("h" + i).value);
+		}
+		
+		
+		var b=parseFloat(document.getElementById("bbb").value);
+		var pl=parseFloat(document.getElementById("ttt").value);
+		var m=parseFloat(document.getElementById("mmm").value);
+		var p=parseFloat(document.getElementById("ppp").value);
+		var mo=parseFloat(document.getElementById("momomo").value);
+		var a=parseFloat(document.getElementById("aaa").value);
+		var kk=parseFloat(document.getElementById("kkk").value);
+		var kesmekuv=parseFloat(document.getElementById("keskes").value);
+		
+		
+	for (k=0;k<(y.length-1);k++){
+	
+	if (k==0){ty[0]=y[0];}
+	else {ty[k]=ty[k-1] + (y[k]);
+	
+	}
+	
+	}
+	
+	
+	for (kk=0;kk<(y.length-1);kk++){
+		h[kk]=ty[kk];
+		hk[kk]=ty[kk]*ty[kk];
+		}
+		
+		var th=dtop(h);
+		var thk=dtop(hk);
+		
+		
+			
+	if (y.length==0) {
+	document.getElementById("sonuc").value="CIVATA MESAFELERİNİ GİRİNİZ!";
+ 	
+	
+	}
+	
+	else {
+	
+	
+	var z;
+			for (z=0;z<(y.length-1);z++) {
+			
+			if (z==0) {
+			toplamh[0]=h[0];
+	     	toplamhk[0]=hk[0];
+			}
+			
+			
+			else {
+			
+			toplamh[0]=h[0];
+			toplamhk[0]=hk[0];
+	
+	toplamh[z]=toplamh[z-1]+h[z];
+	toplamhk[z]=toplamhk[z-1]+hk[z];
+		}
+	
+	
+	var toph=th-dtop(toplamh)+h[z];
+	var tophk=thk-dtop(toplamhk)+hk[z];
+				
+				
+		
+		var rn=(m*a*(y.length-z-1))/b;
+		var sn=(m*a*toph)/b;
+		var tn=(m*a*tophk)/b;
+		var e=((1000*mo)/p)-kk;
+		
+		
+
+		
+		var xxx=solveCubic(1,(3*e),(6*(e*rn+sn)),-(6*(e*sn+tn)));
+	if (xxx[0]>h[z] && xxx[0]<h[z+1]){
+		var x=xxx[0]; 
+		break;}
+	   
+		
+		else if (xxx[1]>h[z] && xxx[1]<h[z+1]) {
+		var x=xxx[1]; 
+		break;}
+		
+		
+		else if (xxx[2]>h[z] && xxx[2]<h[z+1]) {
+		var x=xxx[2];
+		break;}
+		
+		
+		}
+		
+		
+		var sigd=((p*x)/(b*(0.5*x*x+rn*x-sn)))*100;
+		var plakaoran=sigd/(2.2*pl);
+		
+		var siglast=sigd*((h[(y.length-2)]-x)/x);
+		var cekme=siglast/1.12;
+		
+		var to=kesmekuv/(m*a*(y.length-1));
+		var kesmeoran=to/0.9;
+		
+		var sigkescek=Math.sqrt((siglast*siglast+3*to*to*10000));
+		var kesmelicekme=(sigkescek)/1.4;
+		
+		
+	
+		
+		
+		document.getElementById("tarafsizeksen").value=x.toFixed(0);
+		document.getElementById("cekme").value=cekme.toFixed(3);
+		document.getElementById("plakaoran").value=plakaoran.toFixed(3);
+		document.getElementById("kesmeoran").value=kesmeoran.toFixed(3);
+		document.getElementById("kesmelicekme").value=kesmelicekme.toFixed(3);
+		
+		}
+		}
+	
+		
+		
+		
+		 
+
+			</script>
+		
+		
+		
+		
+		
+		
+		<script language="JavaScript">
+		function openNav() {
+		document.getElementById("cekmece").style.width="250px";
+		document.getElementById("cekmece").style.display="block";
+		}
+		
+		function closeNav() {
+		document.getElementById("cekmece").style.width = "0";
+		document.getElementById("cekmece").style.display="none";
+		}
+		</script>
+		
+		
+		
+	 </head>
+
+    <body>
+	
+	
+	<div id="cc" class="cc"><ccc id="ccc">Kolon-Kiriş Birleşim Hesabı</ccc>
+
+<div id="cekmece" class="sidenav" style="width: 250px;">
+  <br>
+  <a id="close" href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a id="a" href="index.html">Aşık Hesabı</a>
+  <a id="a" href="tabanhesabi.html">Kolon Tabanı Hesabı</a>
+  <a id="a" href="bulonkesme.html">Bulon Hesabı</a>
+  <a id="a" href="kolkir.html">Kolon-Kiriş Birleşim Hesabı</a>
+</div>
+
+<span onclick="openNav()" id="cekmeceac">☰</span>
+
+
+</div>
+
+
+
+
+	
+	
+	<div id="main">       
+	
+	
+	
+	
+	<div id="tab1"><table id="tablo1">					
+			<tr>
+				<td class="on">d<sub>i</sub></td>
+				<td class="on">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="on"><input type="number"  class='hclass' name="h" id='h' /></td>                     
+				<td class="on"><input type="button" class='del' value='Sil' /></td>
+			</tr>                  
+			<tr>
+				<td class="on"><input type="number"  class='hclass' name="h" id='h' /></td>
+				<td class="on"><input type="button" class="add" value="Ekle" /></td>
+			</tr>
+		</table></div><br>
+		
+		
+		
+		
+		<t1><nav class="ilk">b (mm)</nav></t1>
+<asd><input type="number" class="ilk" id="bbb" min="0"></asd>
+<br><br>
+
+<t1><nav>Kuvvetin Etkidiği Mesafe (mm)</nav></t1>
+<asd><input type="number" id="kkk" min="0"></asd>
+<br><br>
+
+<t1><nav>t (mm)</nav></t1>
+<select id="ttt">
+<option value="5">5 mm</option>
+<option value="10">10 mm</option>
+<option value="15">15 mm</option>
+<option value="20">20 mm</option>
+<option value="25">25 mm</option>
+<option value="30">30 mm</option>
+<option value="35">35 mm</option>
+<option value="40">40 mm</option>
+</select>
+<br><br>
+
+
+
+<t1><nav>1 Sıradaki Bulon Sayısı</nav></t1>
+<select id="mmm">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select>
+<br><br>
+
+<t1><nav>P (tf)</nav></t1>
+<asd><input type="number" id="ppp" min="0"></asd>
+<br><br>
+
+<t1><nav>T (tf)</nav></t1>
+<asd><input type="number" id="keskes" min="0"></asd>
+<br><br>
+
+<t1><nav>M (tfm)</nav></t1>
+<asd><input type="number" id="momomo" min="0"></asd>
+<br><br>
+
+
+
+
+<t1><nav>∅ (mm)</nav></t1>
+<select id="aaa">
+<option value="74.3">M12</option>
+<option value="141">M16</option>
+<option value="220">M20</option>
+<option value="276">M22</option>
+<option value="317">M24</option>
+<option value="419">M27</option>
+<option value="509">M30</option>
+<option value="636">M33</option>
+<option value="745">M36</option>
+</select>
+<br><br>
+
+
+<div style="text-align:center;"><button onclick="hesap()" id="butontaban"><b>Hesapla</b></button></div>
+<br><br>
+
+
+<table id="tablo">
+
+<tbody>
+
+<tr>
+<td id="on">Tarafsız Eksen (mm)</td>
+<td id="off1"><output id="tarafsizeksen" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Cıvata Çekme Dayanımı</td>
+<td id="off2"><output id="cekme" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Plaka Gerilme Oranı</td>
+<td id="off3"><output id="plakaoran" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Cıvata Kesme Oranı</td>
+<td id="off3"><output id="kesmeoran" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Cıvata Kesmeli Çekme Oranı</td>
+<td id="off4"><output id="kesmelicekme" readonly=""></output></td>
+</tr>
+
+
+</tbody></table>
+
+
+		
+		
+		
+	</div>	
+    </body>
+</html>
