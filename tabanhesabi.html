@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+<link rel="stylesheet" media="screen and (min-width: 900px)" href="desktop.css" charset="UTF-8">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="mobile.css" charset="UTF-8">
+
+
+
+<body>
+
+<title>Kolon Taban Hesabı</title>
+
+
+
+
+<script language="JavaScript">
+function openNav() {
+document.getElementById("cekmece").style.width="250px";
+document.getElementById("cekmece").style.display="block";
+document.getElementById("cekmece").style.transition="0.5s";
+}
+
+function closeNav() {
+    document.getElementById("cekmece").style.width = "0";
+    document.getElementById("cekmece").style.display="none";
+    document.getElementById("cekmece").style.transition="0.5s";
+}
+</script>
+
+
+
+
+
+<div id="cc" class="cc"><ccc id="ccc">Kolon Taban Hesabı</ccc>
+
+<div id="cekmece" class="sidenav" style="display: block;">
+  <br>
+  <a id="a" href="index.html">Aşık Hesabı</a>
+  <a id="a" href="tabanhesabi.html">Kolon Tabanı Hesabı</a>
+  <a id="a" href="bulonkesme.html">Bulon Hesabı</a>
+  <a id="a" href="kolkir.html">Kolon-Kiriş Birleşim Hesabı</a>
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="main">
+<br>
+
+<br><br>
+
+
+<img src="t1.png" alt="Notasyon-1" id="res"><br>
+<img src="t2.png" alt="Notasyon-2" id="res"><br>
+
+
+
+<br><br>
+
+<t1><nav>L<sub>x</sub> (mm)</nav></t1>
+<asd><input type="number" id="lx" min="0"></asd>
+<br><br>
+
+<t1><nav>L<sub>y</sub> (mm)</nav></t1>
+<asd><input type="number" id="ly" min="0"></asd>
+<br><br>
+
+<t1><nav>t (mm)</nav></t1>
+<select id="tt">
+<option value="5">5 mm</option>
+<option value="10">10 mm</option>
+<option value="15">15 mm</option>
+<option value="20">20 mm</option>
+<option value="25">25 mm</option>
+<option value="30">30 mm</option>
+<option value="35">35 mm</option>
+<option value="40">40 mm</option>
+</select>
+<br><br>
+
+<t1><nav>f (mm)</nav></t1>
+<asd><input type="number" id="fx" min="0"></asd>
+<br><br>
+
+
+
+<t1><nav>Y Yönündeki Ankraj Adeti</nav></t1>
+<select id="nx">
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+<br><br>
+
+<t1><nav>P (tf)</nav></t1>
+<asd><input type="number" id="ptaban" min="0"></asd>
+<br><br>
+
+<t1><nav>M (tfm)</nav></t1>
+<asd><input type="number" id="mx" min="0"></asd>
+<br><br>
+
+
+<t1><nav>bx (mm)</nav></t1>
+<select id="by">
+<option value="5">5 mm</option>
+<option value="10">10 mm</option>
+<option value="15">15 mm</option>
+<option value="20">20 mm</option>
+<option value="25">25 mm</option>
+<option value="30">30 mm</option>
+<option value="35">35 mm</option>
+<option value="40">40 mm</option>
+</select>
+<br><br>
+
+<t1><nav>h<sub>bx</sub> (mm)</nav></t1>
+<asd><input type="number" id="hby" min="0"></asd>
+<br><br>
+
+
+<t1><nav>b<sub>m</sub> (mm)</nav></t1>
+<asd><input type="number" id="bmy" min="0"></asd>
+<br><br>
+
+
+<t1><nav>h (mm)</nav></t1>
+<asd><input type="number" id="hh" min="0"></asd>
+<br><br>
+
+<t1><nav>d (mm)</nav></t1>
+<asd><input type="number" id="dd" min="0"></asd>
+<br><br>
+
+
+
+<t1><nav>Beton Ayak Ölçüleri (mm)</nav></t1>
+<asd><input type="number" id="al1" min="0"></asd><asd><input type="number" id="al2" min="0"></asd>
+<br><br>
+
+<t1><nav>∅ (mm)</nav></t1>
+<select id="dtaban">
+<option value="20">M20</option>
+<option value="24">M24</option>
+<option value="27">M27</option>
+<option value="30">M30</option>
+<option value="35">M35</option>
+<option value="48">M48</option>
+</select>
+<br><br>
+
+<t1><nav>Beton Sınıfı</nav></t1>
+<select id="fck1">
+<option value="20">C20</option>
+<option value="25">C25</option>
+<option value="30">C30</option>
+</select>
+<br><br>
+
+
+<div style="text-align:center;"><button onclick="taban()" id="butontaban"><b>Hesapla</b></button></div>
+<br><br>
+
+
+
+
+<table id="tablo">
+
+<tbody>
+
+<tr>
+<td id="on">Plaka Kalınlığı</td>
+<td id="off1"><output id="tabanplakasi" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Ankraj Çekme Dayanımı</td>
+<td id="off2"><output id="ankraj" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Berkitme Kontrolü</td>
+<td id="off3"><output id="berkitme" readonly=""></output></td>
+</tr>
+
+<tr>
+<td id="on">Beton Gerilemsi Kontrolü</td>
+<td id="off4"><output id="betonger" readonly=""></output></td>
+</tr>
+
+
+</tbody></table>
+
+
+
+<script language="JavaScript">
+
+function taban() {
+
+
+// X YÖNÜ HESAPLARI
+
+
+var lx=parseFloat(document.getElementById("lx").value);
+var ly=parseFloat(document.getElementById("ly").value);
+var tt=parseFloat(document.getElementById("tt").value);
+var zx=parseFloat(document.getElementById("fx").value);
+var nx=parseFloat(document.getElementById("nx").value);
+var ptabann=parseFloat(document.getElementById("ptaban").value);
+var mxx=parseFloat(document.getElementById("mx").value);
+var by=parseFloat(document.getElementById("by").value);
+var hby=parseFloat(document.getElementById("hby").value);
+var al1=parseFloat(document.getElementById("al1").value);
+var al2=parseFloat(document.getElementById("al2").value);
+var fck=parseFloat(document.getElementById("fck1").value);
+var dtaban=parseFloat(document.getElementById("dtaban").value);
+var bmy=parseFloat(document.getElementById("bmy").value);
+var hh=parseFloat(document.getElementById("hh").value);
+var dd=parseFloat(document.getElementById("dd").value);
+
+var aan=(Math.PI*dtaban*dtaban)/4;
+var ptaban=ptabann*9.80665;
+var mx=mxx*9.80665;
+var ab=al1*al2;
+var c=lx/4;
+var e=lx-zx-c*0.5;
+var sigb=((1000*mx+ptaban*(lx*0.5-zx))/(c*ly*e));
+var d=(sigb*c*ly);
+var z=d-ptaban;
+var ankrajo=(1000*z)/(0.75*600*aan*nx);
+
+
+var gtaban=(by*hby*hby+tt*ly*(hby+0.5*tt))/(2*by*hby+tt*ly);
+var itaban=((2*by*hby*hby*hby)/12)+((ly*tt*tt*tt)/12)+(2*by*hby*(gtaban-0.5*hby)*(gtaban-0.5*hby))+(ly*tt*(gtaban-0.5*tt)*(gtaban-0.5*tt));
+var wtaban=itaban/gtaban;
+var mdtaban=d*(0.5*lx-0.5*c-0.5*bmy);
+var mntaban=(wtaban*235*0.9)/(1000);
+var berkitmeo=mdtaban/mntaban;
+
+
+var apl=lx*ly;
+var pptaban=0.85*fck*apl*Math.sqrt((ab/apl));
+var pptaban2=0.65*pptaban;
+var mm=(ly-0.95*hh)/2;
+var nn=(lx-0.8*dd)/2;
+var nussu=(Math.sqrt(hh*dd))/4;
+var xx=((4*hh*dd)/((hh+dd)*(hh+dd)))*(ptaban/(pptaban2*0.001));
+var landa=(2*Math.sqrt(xx))/(1+Math.sqrt(1-xx));
+
+
+if (landa>1) {var landaa=1;}
+else {var landaa=landa;}
+
+var landanussu=landaa*nussu;
+var lll=Math.max(mm,nn,landanussu);
+
+var fpu=(ptaban*1000)/(lx*ly);
+var tmin=lll*Math.sqrt((2*fpu)/(0.9*235));
+var tabanpo=tmin/tt;
+
+
+
+
+
+var denemet1=1.7*fck*apl;
+
+
+var denemet2=(ab*fck)/1.5;
+var tabanbo=ptaban/(pptaban2*0.001);
+var tabanpo1=sigb/(fck/1.5);
+var tabanpo2=pptaban/denemet1;
+
+
+
+
+
+
+
+document.getElementById("tabanplakasi").value=tabanpo.toFixed(3);
+document.getElementById("ankraj").value=ankrajo.toFixed(3);
+document.getElementById("berkitme").value=berkitmeo.toFixed(3);
+
+if (sigb>(fck/1.5)) {
+document.getElementById("betonger").value=tabanpo1.tofixed(3);
+document.getElementById("off4").style="background-color:red";}
+else if (pptaban>denemet1) {
+document.getElementById("betonger").value=tabanpo2.tofixed(3);
+document.getElementById("off4").style="background-color:red";}
+else {
+document.getElementById("betonger").value=tabanbo.toFixed(3);
+
+
+
+if (0<tabanbo && tabanbo<0.5) {
+document.getElementById("off4").style="background-color:cyan";
+}
+else if (0.5<=tabanbo && tabanbo<0.75) {
+document.getElementById("off4").style="background-color:green";
+}
+else if (0.75<=tabanbo && tabanbo<0.9) {
+document.getElementById("off4").style="background-color:yellow";
+}
+else if (0.9<=tabanbo && tabanbo<1) {
+document.getElementById("off4").style="background-color:orange";
+}
+else {document.getElementById("off4").style="background-color:red";}
+
+
+}
+
+
+if (0<ankrajo && ankrajo<0.5) {
+document.getElementById("off2").style="background-color:cyan";
+}
+else if (0.5<=ankrajo && ankrajo<0.75) {
+document.getElementById("off2").style="background-color:green";
+}
+else if (0.75<=ankrajo && ankrajo<0.9) {
+document.getElementById("off2").style="background-color:yellow";
+}
+else if (0.9<=ankrajo && ankrajo<1) {
+document.getElementById("off2").style="background-color:orange";
+}
+else {document.getElementById("off2").style="background-color:red";}
+
+
+if (0<berkitmeo && berkitmeo<0.5) {
+document.getElementById("off3").style="background-color:cyan";
+}
+else if (0.5<=berkitmeo && berkitmeo<0.75) {
+document.getElementById("off3").style="background-color:green";
+}
+else if (0.75<=berkitmeo && berkitmeo<0.9) {
+document.getElementById("off3").style="background-color:yellow";
+}
+else if (0.9<=berkitmeo && berkitmeo<1) {
+document.getElementById("off3").style="background-color:orange";
+}
+else {document.getElementById("off3").style="background-color:red";}
+
+
+if (0<tabanpo && tabanpo<0.5) {
+document.getElementById("off1").style="background-color:cyan";
+}
+else if (0.5<=tabanpo && tabanpo<0.75) {
+document.getElementById("off1").style="background-color:green";
+}
+else if (0.75<=tabanpo && tabanpo<0.9) {
+document.getElementById("off1").style="background-color:yellow";
+}
+else if (0.9<=tabanpo && tabanpo<1) {
+document.getElementById("off1").style="background-color:orange";
+}
+else {document.getElementById("off1").style="background-color:red";}
+
+
+
+
+
+}
+
+</script>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+
+</body></html>

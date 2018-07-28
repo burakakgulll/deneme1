@@ -1,0 +1,219 @@
+
+
+
+
+body {
+background-color:#EEE;
+width:device-width;
+padding-bottom:5%;
+padding-left:5%;
+padding-right:5%;
+padding-top:15%;
+vertical-align:middle;
+margin:auto;
+font-family:"Arial Narrow";
+font-size:4vw;
+}
+
+
+#buton {
+float-center:center;
+padding:1.5vw;
+width:70%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+#butontaban {
+float-center:center;
+padding:1.5vw;
+width:70%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+
+nav {
+float:left;
+width:50%;
+}
+
+
+table,th,td {
+border: 0.1vw solid black;
+border-collapse: collapse;
+text-align:center;
+padding-top:4vw;
+padding-bottom:4vw;
+}
+
+
+
+
+td {
+text-align:center;
+}
+
+
+#on {
+background-color:gray;
+color:white;
+width:50%;
+text-align:center;
+border:0.1vw solid black;
+}
+
+output {
+width:50%;
+}
+
+
+
+
+select {
+border-radius:5px;
+border:1px black solid;
+background-color:gray;
+color:white;
+}
+
+#tablobas {
+background-color:gray;
+color:white;
+text-align:center;
+border:0.1vw solid black;
+
+}
+
+.sidenav{
+height:100%;
+width:0;
+position:fixed;
+z-index:1;
+top:0;
+left:0;
+background-color:black;
+overflow-x:hidden;
+padding-top:8vw;
+transition:all 1s;
+display:none;
+}
+
+
+.sidenav a {
+padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:4vw;
+color:white;;
+display:block;
+transition:all 1s;
+}
+
+.sidenav b {
+padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:6vw;
+color:white;
+display:block;
+transition:all 1s;
+}
+
+
+.sidenav a:hover {
+color:#f1f1f1;
+}
+
+.sidenav .closebtn {
+position:absolute;
+top:0;
+right:10px;
+top:5px;
+font-size:10vw;
+margin-left:50px;
+padding:5px;
+}
+
+#cekmeceac {
+padding-top:2.5vw;
+padding-left:5vw;
+padding-right:5vw;
+padding-bottom:2.5vw;
+font-size:5vw;
+color:white;
+position:fixed;
+}
+
+#cc {
+top:0;
+left:0;
+right:0;
+height:10vw;
+background-color:black;
+display:inline;
+position:fixed;
+z-index:0;
+width:device-width;
+}
+
+#ccc {
+diplay:block;
+top:3vw;
+left:12vw;
+color:white;
+position:fixed;
+font-size:5vw;
+}
+
+table{
+margin-left:auto;
+margin-right:auto;
+}
+
+
+
+#main {
+
+font-size:3vw;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
+#lkar,#hkar,#noktaasikara,#acikliksol,#acikliksag,#bolge,#rakim,#buzz,#noktayukseklik,#asikk,#kaplama{
+text-align:center;
+vertical-align:middle;
+width:40%;
+}
+
+#al1{
+width:22%;
+}
+
+#al2{
+width:22%;
+}
+
+#res {
+border: 0.2vw solid black;
+border-radius:1vw;
+max-width:80%;
+height:auto;
+display:block;
+margin-left:auto;
+margin-right:auto;
+
+
+}
