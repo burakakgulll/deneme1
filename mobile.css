@@ -1,0 +1,238 @@
+
+
+
+
+body {
+background-color:#EEE;
+width:device-width;
+padding-bottom:5%;
+padding-left:5%;
+padding-right:5%;
+padding-top:15%;
+vertical-align:middle;
+margin:auto;
+font-family:"Arial Narrow";
+font-size:4vw;
+}
+
+
+#buton {
+margin-top:3vh;
+margin-bottom:3vh;
+float-center:center;
+padding:1.5vw;
+width:70%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+#butontaban {
+float-center:center;
+padding:1.5vw;
+width:70%;
+background-color:gray;
+color:white;
+border-style:solid;
+border-color:black;
+border-width:0.1vw;
+border-radius:1.5vw;
+}
+
+
+
+
+
+table,tr,td {
+border: 0.1vw solid black;
+border-collapse: collapse;
+text-align:center;
+width:80vw;
+padding-top:1vh;
+padding-bottom:1vh;
+}
+
+tr,td {
+padding-right:1vw;
+padding-left:1vw;
+}
+
+tr {
+height:10vh;
+}
+
+
+nav{
+padding-top:2px;
+padding-bottom:2px;
+text-align:left;
+font-size:14px;
+margin-left:2.5vw;
+float:left;
+width:50%;
+}
+
+asd{
+padding-top:2px;
+padding-bottom:2px;
+width:40%;
+font-size:14px;
+}
+.asd{
+padding-top:2px;
+padding-bottom:2px;
+width:40%;
+font-size:14px;
+}
+select {
+padding-top:2px;
+padding-bottom:2px;
+border-radius:5px;
+border:1px black solid;
+background-color:gray;
+color:white;
+width:40%;
+font-size:14px;
+}
+
+
+
+
+
+
+#on {
+background-color:gray;
+color:white;
+width:10vw;
+text-align:center;
+border:0.1vw solid black;
+}
+
+
+
+
+
+
+
+#tablobas {
+background-color:gray;
+color:white;
+text-align:center;
+border:0.1vw solid black;
+
+}
+
+.sidenav{
+height:100%;
+width:0;
+position:fixed;
+z-index:1;
+top:0;
+left:0;
+background-color:black;
+overflow-x:hidden;
+padding-top:8vw;
+transition:all 1s;
+display:none;
+}
+
+
+.sidenav a {
+padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:4vw;
+color:white;;
+display:block;
+transition:all 1s;
+}
+
+.sidenav b {
+padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:6vw;
+color:white;
+display:block;
+transition:all 1s;
+}
+
+
+.sidenav a:hover {
+color:#f1f1f1;
+}
+
+.sidenav .closebtn {
+position:absolute;
+top:0;
+right:10px;
+top:5px;
+font-size:10vw;
+margin-left:50px;
+padding:5px;
+}
+
+#cekmeceac {
+padding-top:2.5vw;
+padding-left:5vw;
+padding-right:5vw;
+padding-bottom:2.5vw;
+font-size:5vw;
+color:white;
+position:fixed;
+}
+
+.ustbar {
+top:0;
+left:0;
+right:0;
+height:10vw;
+background-color:black;
+display:inline;
+position:fixed;
+z-index:0;
+width:device-width;
+}
+
+#ustbaryazi {
+diplay:block;
+top:3vw;
+left:12vw;
+color:white;
+position:fixed;
+font-size:5vw;
+}
+
+table{
+margin-left:auto;
+margin-right:auto;
+}
+
+
+
+#main {
+
+font-size:3vw;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
+
+#res {
+border: 0.2vw solid black;
+border-radius:1vw;
+max-width:80%;
+height:auto;
+display:block;
+margin-left:auto;
+margin-right:auto;
+
+
+}
